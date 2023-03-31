@@ -42,5 +42,5 @@ jobs:
 
       - name: Prepare host2
         run: |
-          env
+          # env
           brew instal gh
