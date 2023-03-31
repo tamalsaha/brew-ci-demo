@@ -25,7 +25,8 @@ jobs:
       - name: Prepare host
         run: |
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-          (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> $HOME/.bash_profile
+          (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bash_profile
+          # (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> $HOME/.bash_profile
 
 #       - name: Setup upterm session
 #         uses: lhotari/action-upterm@v1
@@ -36,4 +37,5 @@ jobs:
       - name: Prepare host2
         shell: bash
         run: |
+          eval "$(brew shellenv)"
           brew instal gh
