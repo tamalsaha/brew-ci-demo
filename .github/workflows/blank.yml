@@ -16,9 +16,9 @@ on:
 # env:
 #   BASH_ENV: /home/runner/.bash_profile
 
-defaults:
-  run:
-    shell: /usr/bin/bash -i -e -o pipefail {0}
+# defaults:
+#   run:
+#     shell: /usr/bin/bash -i -e -o pipefail {0}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,11 +29,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Prepare host
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-          (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') > /home/runner/.bash_profile
+#       - name: Prepare host
+#         run: |
+#           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#           (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') > /home/runner/.bash_profile
 
+      - uses: Homebrew/actions/setup-homebrew@master
+  
 #       - name: Setup upterm session
 #         uses: lhotari/action-upterm@v1
 #         with:
