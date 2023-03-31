@@ -29,4 +29,5 @@ jobs:
 
       - name: Prepare host2
         run: |
+          cat $HOME/.bash_profile
           brew instal gh
