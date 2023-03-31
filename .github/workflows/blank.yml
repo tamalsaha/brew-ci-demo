@@ -37,6 +37,6 @@ jobs:
 #           limit-access-to-users: tamalsaha
 
       - name: Prepare host2
-        shell: bash
         run: |
+          env
           brew instal gh
