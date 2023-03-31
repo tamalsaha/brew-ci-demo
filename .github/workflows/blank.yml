@@ -37,5 +37,6 @@ jobs:
       - name: Prepare host2
         shell: bash
         run: |
-          eval "$(brew shellenv)"
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          # eval "$(brew shellenv)"
           brew instal gh
